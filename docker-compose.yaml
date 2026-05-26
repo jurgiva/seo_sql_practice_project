@@ -1,0 +1,13 @@
+# docker-compose.yml
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: seo_sql_practice
+    environment:
+      POSTGRES_DB: seo_project
+      POSTGRES_USER: seo_user
+      POSTGRES_PASSWORD: seo_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
